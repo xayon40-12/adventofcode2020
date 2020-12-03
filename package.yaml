@@ -1,0 +1,39 @@
+name:                adventofcode2020
+version:             0.1.0.0
+github:              "xayon40-12/adventofcode2020"
+license:             BSD3
+author:              "Nathan Touroux"
+maintainer:          "touroux.nathan@gmail.com"
+copyright:           "2020 Nathan Touroux"
+
+extra-source-files:
+- README.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Development
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/xayon40-12/adventofcode2020#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- regex-tdfa
+
+ghc-options:
+    - -threaded
+    - -O2
+    - -rtsopts
+    - -with-rtsopts=-N
+
+#source-dirs: days
+
+executables:
+  Day1:
+    main: Main.hs
+    source-dirs: days/Day1/
+  Day2:
+    main: Main.hs
+    source-dirs: days/Day2/
