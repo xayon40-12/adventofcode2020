@@ -21,6 +21,7 @@ description:         Please see the README on GitHub at <https://github.com/xayo
 dependencies:
 - base >= 4.7 && < 5
 - regex-tdfa
+- split
 
 ghc-options:
     - -threaded
@@ -40,3 +41,6 @@ executables:
   Day3:
     main: Main.hs
     source-dirs: days/Day3/
+  Day4:
+    main: Main.hs
+    source-dirs: days/Day4/
