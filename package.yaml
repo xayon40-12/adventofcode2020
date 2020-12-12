@@ -22,6 +22,7 @@ dependencies:
 - base >= 4.7 && < 5
 - regex-tdfa
 - split
+- sort
 
 ghc-options:
     - -threaded
@@ -44,3 +45,6 @@ executables:
   Day4:
     main: Main.hs
     source-dirs: days/Day4/
+  Day5:
+    main: Main.hs
+    source-dirs: days/Day5/
