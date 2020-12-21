@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 5ebbae6b40f4742ebc90b5b8819ad7d838843677ff1ad6fc8abcce0ff00c3766
+-- hash: f462130a418d38d829fa9c0e1df4d0d5c08800beac19294887dc019bbbe2d48d
 
 name:           adventofcode2020
 version:        0.1.0.0
@@ -32,7 +32,8 @@ executable Day1
       days/Day1/
   ghc-options: -threaded -O2 -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      MissingH
+    , base >=4.7 && <5
     , regex-tdfa
     , sort
     , split
@@ -46,7 +47,8 @@ executable Day2
       days/Day2/
   ghc-options: -threaded -O2 -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      MissingH
+    , base >=4.7 && <5
     , regex-tdfa
     , sort
     , split
@@ -60,7 +62,8 @@ executable Day3
       days/Day3/
   ghc-options: -threaded -O2 -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      MissingH
+    , base >=4.7 && <5
     , regex-tdfa
     , sort
     , split
@@ -74,7 +77,8 @@ executable Day4
       days/Day4/
   ghc-options: -threaded -O2 -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      MissingH
+    , base >=4.7 && <5
     , regex-tdfa
     , sort
     , split
@@ -88,7 +92,23 @@ executable Day5
       days/Day5/
   ghc-options: -threaded -O2 -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      MissingH
+    , base >=4.7 && <5
+    , regex-tdfa
+    , sort
+    , split
+  default-language: Haskell2010
+
+executable Day6
+  main-is: Main.hs
+  other-modules:
+      Paths_adventofcode2020
+  hs-source-dirs:
+      days/Day6/
+  ghc-options: -threaded -O2 -rtsopts -with-rtsopts=-N
+  build-depends:
+      MissingH
+    , base >=4.7 && <5
     , regex-tdfa
     , sort
     , split

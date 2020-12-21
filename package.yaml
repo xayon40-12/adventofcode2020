@@ -23,6 +23,7 @@ dependencies:
 - regex-tdfa
 - split
 - sort
+- MissingH
 
 ghc-options:
     - -threaded
@@ -48,3 +49,6 @@ executables:
   Day5:
     main: Main.hs
     source-dirs: days/Day5/
+  Day6:
+    main: Main.hs
+    source-dirs: days/Day6/
