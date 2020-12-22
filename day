@@ -1,0 +1,26 @@
+#!/bin/sh
+
+if [[ -z "$1" ]]; then
+    echo "There must be one argument (the day number)!"
+    echo "Exemple:"
+    echo "./day 1"
+    exit -1
+fi
+
+file=days/Day$1/Main.hs
+
+if [[ ! -f $file ]]; then
+    echo "  Day$1:
+    main: Main.hs
+    source-dirs: days/Day$1/" >> package.yaml
+
+    $EDITOR inputs/day$1.txt
+    mkdir days/Day$1
+    echo "module Main where
+
+main :: IO ()
+main = print \"hello\"" >> $file
+    stack setup
+fi
+
+$EDITOR $file
