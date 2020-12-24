@@ -24,6 +24,8 @@ dependencies:
 - split
 - sort
 - MissingH
+- hashmap
+- hashable
 
 ghc-options:
     - -threaded

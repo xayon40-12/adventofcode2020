@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: d6f8f7da192138de272f7e725738f27609079ba7e72c2c89ab1ffdd56b765cec
+-- hash: 79724da2bf9192fa0e4899ec7e0b7a23c57e0c4e7450610a885941060add7f9a
 
 name:           adventofcode2020
 version:        0.1.0.0
@@ -34,6 +34,8 @@ executable Day1
   build-depends:
       MissingH
     , base >=4.7 && <5
+    , hashable
+    , hashmap
     , regex-tdfa
     , sort
     , split
@@ -49,6 +51,8 @@ executable Day2
   build-depends:
       MissingH
     , base >=4.7 && <5
+    , hashable
+    , hashmap
     , regex-tdfa
     , sort
     , split
@@ -64,6 +68,8 @@ executable Day3
   build-depends:
       MissingH
     , base >=4.7 && <5
+    , hashable
+    , hashmap
     , regex-tdfa
     , sort
     , split
@@ -79,6 +85,8 @@ executable Day4
   build-depends:
       MissingH
     , base >=4.7 && <5
+    , hashable
+    , hashmap
     , regex-tdfa
     , sort
     , split
@@ -94,6 +102,8 @@ executable Day5
   build-depends:
       MissingH
     , base >=4.7 && <5
+    , hashable
+    , hashmap
     , regex-tdfa
     , sort
     , split
@@ -109,6 +119,8 @@ executable Day6
   build-depends:
       MissingH
     , base >=4.7 && <5
+    , hashable
+    , hashmap
     , regex-tdfa
     , sort
     , split
@@ -124,6 +136,8 @@ executable Day7
   build-depends:
       MissingH
     , base >=4.7 && <5
+    , hashable
+    , hashmap
     , regex-tdfa
     , sort
     , split
