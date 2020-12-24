@@ -19,7 +19,8 @@ if [[ ! -f $file ]]; then
     echo "module Main where
 
 main :: IO ()
-main = print \"hello\"" >> $file
+main = do
+    print \"hello\"" >> $file
     stack setup
 fi
 
