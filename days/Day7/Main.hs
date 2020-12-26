@@ -5,10 +5,7 @@ import Text.Regex.TDFA
 import qualified Data.HashMap as M
 import Data.Hashable
 import GHC.Generics (Generic)
-import Data.List.Utils
-
--- vibrant plum bags contain 5 faded blue bags, 6 dotted black bags.
--- faded blue bags contain no other bags.
+import Data.List.Utils hiding (contains)
 
 data Colour = Colour String String deriving (Eq,Ord,Show,Generic)
 instance Hashable Colour
@@ -28,14 +25,24 @@ containedBy = foldl ins M.empty
     where
         ins m (Node c ns) = foldl (\m (_,sc) -> M.insertWith (++) sc [c] m) m ns
 
-treeContainedBy :: M.Map Colour [Colour] -> Colour -> [Colour]
-treeContainedBy m c = uniq (start ++ (start >>= treeContainedBy m))
+recContainedBy :: M.Map Colour [Colour] -> Colour -> [Colour]
+recContainedBy m c = uniq (start ++ (start >>= recContainedBy m))
     where
         start = M.findWithDefault [] c m
+
+contains :: [Node] -> M.Map Colour [(Int,Colour)]
+contains = foldl (\m (Node c cs) -> M.insert c cs m) M.empty
+
+recContains :: M.Map Colour [(Int,Colour)] -> Colour -> Int
+recContains m c = foldl (\acc (n,c) -> acc+n*(1+recContains m c)) 0 $ m M.! c
 
 main :: IO ()
 main = do
     f <- parse <$> readFile "inputs/day7.txt"
 
-    let possible = treeContainedBy (containedBy f) $ Colour "shiny" "gold"
+    let shiny = Colour "shiny" "gold"
+
+    let possible = recContainedBy (containedBy f) shiny
     print $ length possible
+
+    print $ recContains (contains f) shiny
